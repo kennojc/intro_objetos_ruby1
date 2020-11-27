@@ -2,15 +2,15 @@ class CuentaBancaria
     attr_accessor :username
 
     def initialize (username, account, vip = 0)
+        raise RangeError, 'La cuenta debe ser de 8 dígitos' if account.digits.count != 8
+        
         @username = username
         @account = account
         @vip = vip
+    end
 
-        puts "RangeError, la cuenta debe tener 8 dígitos" if @account.digits.count != 8
-        end
-
-    def num_de_cuenta (account)
-        if @vip = 1
+    def num_de_cuenta
+        if @vip == 1
             print "Su cuenta es 1-#{@account} y corresponde a Cuenta VIP"
         else
             print "Su cuenta es 0-#{@account} y corresponde a Cuenta Estándar"
@@ -19,4 +19,7 @@ class CuentaBancaria
 end
 
 prueba = CuentaBancaria.new('SrBarriga',12345678,1)
-puts prueba
+otra_prueba = CuentaBancaria.new('DonRamón', 12345667)
+
+puts prueba.num_de_cuenta
+puts otra_prueba.num_de_cuenta
