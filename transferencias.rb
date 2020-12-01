@@ -1,17 +1,21 @@
-require byebug
+require 'byebug'
 
 class Usuario
     attr_accessor :client, :bank_account
     
-    def initialize (client,bank_account)
+    def initialize (client,bank_account = array.new)
         raise ArgumentError, 'El cliente debe tener al menos una cuenta bancaria registrada.' if bank_account.count < 1
         @client = client
         @bank_account = bank_account 
+        
+
     end
 
     def total_balance
-        all = bank_account.each {|c| c.balance }.sum
+        
+        all = bank_account.map {|c| c.balance }.sum
         puts "El saldo total de #{client} es #{all} "
+        print "\n"
     end
 
 end
