@@ -49,6 +49,6 @@ cuenta3 = CuentaBancaria.new("Banco B","micuenta",10000)
 cliente1 = Usuario.new("Juan",[cuenta1, cuenta2])
 cliente2 = Usuario.new("Pedro", [cuenta3])
 
-ejemplo = cuenta1.transfer(5000,cuenta3)
+cuenta1.transfer(5000,cuenta3)
 puts "A #{cliente1.client} le quedan #{cuenta1.balance} después de transferirle 5000 a Pedro"
 puts "#{cliente2.client} ahora tiene #{cuenta3.balance} en su cuenta."

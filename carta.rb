@@ -1,3 +1,4 @@
+
 cards = ARGV[0].to_i
 
 class Carta
@@ -14,9 +15,13 @@ def shuffle(cards)
     cards.times do |i|
         deck << Carta.new
     end
+
     
     print deck 
     print "\n"
 end
 
 shuffle(cards)
+
+
+
